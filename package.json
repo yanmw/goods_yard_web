@@ -1,10 +1,10 @@
 {
-  "name": "zl",
+  "name": "qrwl",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --open",
-    "build": "vue-cli-service build --dest zl",
+    "build": "vue-cli-service build --dest qr",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -18,7 +18,7 @@
     "less-loader": "^5.0.0",
     "swiper": "^5.2.0",
     "vue": "^2.6.10",
-    "vue-router": "^3.0.3",
+    "vue-router": "^3.0.7",
     "vuex": "^3.1.1"
   },
   "devDependencies": {

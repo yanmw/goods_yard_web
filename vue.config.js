@@ -9,18 +9,16 @@ if (process.env.NODE_ENV === 'production') {
 module.exports = {		
   devServer: {
     proxy: {
-      '/ymw': {
-        target: 'http://192.168.1.128:8080',
+      '/qr': {
+        target: 'http://192.168.1.66:8002',
         ws: false,
         changeOrigin: true
       }
     }
   },
   productionSourceMap: false,
-  publicPath: 'zl'
+  publicPath: 'qr'
   // ...extra_env
 }
- // target: 'http://39.107.156.39:85',
- // http://192.168.1.150:80
- // http://192.168.1.128:8080
- // 172.16.0.112
+ // http://192.168.1.66:8002
+ // http://192.168.1.205:8002 

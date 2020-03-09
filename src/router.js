@@ -14,135 +14,168 @@ export default new Router({
 	  path: "/login",
 	  component: () => import("./views/login/login.vue")
 	},
-	{
-	  path: "/loginUser",
-	  component: () => import("./views/login/loginUser.vue")
-	},
-    {
-      path: "/register",
-      component: () => import("./views/login/register.vue")
-    },
-	{
-	  path: "/retrievePassword",
-	  component: () => import("./views/login/retrievePassword.vue")
-	},
-    {
-      path: '/home',
-      component: () => import('./views/home.vue')
-    },
+ //    {
+ //      path: '/home',
+ //      component: () => import('./views/home.vue')
+ //    },
+	// {
+	//   path: "todayDynamic",
+	//   component: () => import("./views/noticeBoard/todayDynamic.vue")
+	// },
 	// {
 	//   path: '/about',
 	//   component: () => import('./views/About.vue')
 	// },
 	{
-	  path: '/personal',
-	  component: () => import('./views/personal.vue'),
-	  redirect: "/personal/personIndex",
+	  path: '/',
+	  name:'首页',
+	  component: () => import('./views/home.vue'),
+	  redirect: "/bulletins/work",
 	  children: [
 		  {
-		    path: "personIndex",
-		    component: () => import("./views/personIndex.vue")
+		    path: "/business/today",
+		    component: () => import("./views/business/todayDynamic.vue")
+		  },
+		  // {
+	   //      path: "/bulletins/work",
+	   //      component: () => import("./views/order/preSettlement.vue")
+	   //    },
+	   //业务部
+		  {
+		    path: "/business/observer/inform", //查看公告
+		    component: () => import("./views/business/checkNotice.vue")
 		  },
 		  {
-	        path: "preSettlement",
-	        component: () => import("./views/order/preSettlement.vue")
-	      },
-		  {
-		    path: "checkPending",
-		    component: () => import("./views/order/checkPending.vue")
+		    path: "/business/creator/inform",  //发布公告
+		    component: () => import("./views/business/issueNotice.vue")
 		  },
 		  {
-		    path: "actualSettlement",
-		    component: () => import("./views/order/actualSettlement.vue")
+		    path: "/business/creator/work",  //发布作业计划
+		    component: () => import("./views/business/planningQing.vue")
 		  },
 		  {
-		    path: "issue",
-		    component: () => import("./views/goods/issue.vue")
+		    path: "/business/observer/work",  //历史计划
+		    component: () => import("./views/business/historyQing.vue")
 		  },
 		  {
-		    path: "list",
-		    component: () => import("./views/goods/list.vue")
+		    path: "/business/creator/instr",  //发布业务指令
+		    component: () => import("./views/business/directiveBusiness.vue")
 		  },
 		  {
-		    path: "maintain",
-		    component: () => import("./views/goods/maintain.vue")
+		    path: "/business/observer/instr", //接收业务指令
+		    component: () => import("./views/business/receiveDirectiveBusiness.vue")
 		  },
 		  {
-		    path: "capitalList",
-		    component: () => import("./views/finance/capitalList.vue")
+		    path: "/business/company", //发货公司
+		    component: () => import("./views/business/shipments.vue")
 		  },
 		  {
-		    path: "recharge",
-		    component: () => import("./views/finance/recharge.vue")
+		    path: "/business/contract", //合同添加
+		    component: () => import("./views/business/contract.vue")
 		  },
 		  {
-		    path: "deal",
-		    component: () => import("./views/finance/deal.vue")
+		    path: "/business/user", //部门人员
+		    component: () => import("./views/business/user.vue")
 		  },
 		  {
-		    path: "dealUser",
-		    component: () => import("./views/finance/dealUser.vue")
+		    path: "/business/performance", //绩效管理
+		    component: () => import("./views/business/performance.vue")
 		  },
 		  {
-		    path: "authentication",
-		    component: () => import("./views/account/authentication.vue")
+		    path: "/business/apply", //我的申请
+		    component: () => import("./views/business/apply.vue")
 		  },
 		  {
-		    path: "phoneEdit",
-		    component: () => import("./views/account/phoneEdit.vue")
+		    path: "/business/approval", //我的审批
+		    component: () => import("./views/business/approval.vue")
 		  },
 		  {
-		    path: "passwordEdit",
-		    component: () => import("./views/account/passwordEdit.vue")
+		    path: "/business/report", //工作报告
+		    component: () => import("./views/business/report.vue")
 		  },
 		  {
-		    path: "accountBypass",
-		    component: () => import("./views/account/accountBypass.vue")
+		    path: "/business/report/statistics", //报告统计
+		    component: () => import("./views/business/statistics.vue")
+		  },
+		  //综合部
+		  {
+		    path: "/system/user", //员工管理
+		    component: () => import("./views/system/user.vue")
 		  },
 		  {
-		    path: "appointment",
-		    component: () => import("./views/sellGoods/appointment.vue")
+		    path: "/sys/video", //发布视频
+		    component: () => import("./views/system/issueVideo.vue")
 		  },
 		  {
-		    path: "offline",
-		    component: () => import("./views/sellGoods/offline.vue")
+		    path: "/system/dept", //组织架构
+		    component: () => import("./views/system/organization.vue")
 		  },
 		  {
-		    path: "paymentCode",
-		    component: () => import("./views/account/paymentCode.vue")
+		    path: "/system/role", //岗位权限
+		    component: () => import("./views/system/role.vue")
 		  },
 		  {
-		    path: "waybill",
-		    component: () => import("./views/buyGoods/waybill.vue")
+		    path: "/sys/observer/inform", //查看公告
+		    component: () => import("./views/business/checkNotice.vue")
 		  },
 		  {
-		    path: "issueWaybill",
-		    component: () => import("./views/buyGoods/issueWaybill.vue")
+		    path: "/sys/creator/inform",  //发布公告
+		    component: () => import("./views/business/issueNotice.vue")
 		  },
 		  {
-		    path: "preSettlementOrder",
-		    component: () => import("./views/orderUser/preSettlementOrder.vue")
+		    path: "/sys/creator/instr",  //发布业务指令
+		    component: () => import("./views/business/directiveBusiness.vue")
 		  },
 		  {
-		    path: "checkPendingOrder",
-		    component: () => import("./views/orderUser/checkPendingOrder.vue")
+		    path: "/sys/observer/instr", //接收业务指令
+		    component: () => import("./views/business/receiveDirectiveBusiness.vue")
 		  },
 		  {
-		    path: "actualSettlementOrder",
-		    component: () => import("./views/orderUser/actualSettlementOrder.vue")
+		    path: "/sys/user", //部门人员
+		    component: () => import("./views/business/user.vue")
 		  },
 		  {
-		    path: "issueBuy",
-		    component: () => import("./views/intention/issueBuy.vue")
+		    path: "/sys/performance", //绩效管理
+		    component: () => import("./views/business/performance.vue")
 		  },
 		  {
-		    path: "listBuy",
-		    component: () => import("./views/intention/listBuy.vue")
+		    path: "/sys/apply", //我的申请
+		    component: () => import("./views/business/apply.vue")
 		  },
 		  {
-		    path: "maintainBuy",
-		    component: () => import("./views/intention/maintainBuy.vue")
-		  }
+		    path: "/sys/approval", //我的审批
+		    component: () => import("./views/business/approval.vue")
+		  },
+		  {
+		    path: "/sys/report", //工作报告
+		    component: () => import("./views/business/report.vue")
+		  },
+		  {
+		    path: "/sys/statistics", //报告统计
+		    component: () => import("./views/business/statistics.vue")
+		  },
+		  
+		  
+		  {
+		    path: "/bulletins/work",
+		    component: () => import("./views/noticeBoard/todayDynamic.vue")
+		  },
+		  {
+		    path: "/dispatch/observer/inform",
+		    component: () => import("./views/dispatching/checkNotice.vue")
+		  },
+		  {
+		    path: "/dispatch/creator/inform",
+		    component: () => import("./views/dispatching/issueNotice.vue")
+		  },
+		  {
+		    path: "/dispatch/creator/instr",
+		    component: () => import("./views/dispatching/directiveBusiness.vue")
+		  },
+		  {
+		    path: "/dispatch/observer/instr",
+		    component: () => import("./views/dispatching/receiveDirectiveBusiness.vue")
+		  },
 	  ]
 	}
   ]

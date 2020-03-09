@@ -12,7 +12,7 @@ const authToken = {
 
     // Token是否超时
     hasToken: function(){
-        return Cookies.get('token')
+        return Cookies.get('qrToken')
     },
 
     // 当前是否是登录状态

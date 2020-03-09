@@ -6,8 +6,8 @@
 
 <style lang="less">
 	@font-face {
-	  font-family: "准元黑简";
-	  src: url("./assets/fontFile/FZY3JW.TTF");
+	  font-family:Noto Sans S Chinese;
+	  src: url("./assets/fontFile/SOURCEHANSANSCN-MEDIUM.OTF");
 	}
 html{
 	width: 100%;
@@ -18,18 +18,40 @@ body{
 	height: 100%;
 	padding: 0;
 	margin: 0;
-	background-color: #f5f8ff;
+	background-color: #EAEFF3;
 }
 #app {
-  font-family:Source Han Sans CN;
+  font-family:Noto Sans S Chinese;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 
 }
-
+.spanTab{
+	margin-bottom: 20px;
+	font-size: 14px;
+	color: #666666;
+	span{
+		color: #00BF6F;
+	}
+}
+.authTit{
+		margin-bottom: 30px;
+		color: #666666;
+		text-align: left;
+		i{
+			display: inline-block;
+			width: 3px;
+			height: 16px;
+			background-color: #00BF6F;
+			vertical-align: bottom;
+			margin-right: 8px;
+			position: relative;
+			top:-5px;
+		}
+	}
 .el-table--fit {
-	border-top: 1px solid #256ff8 !important;
+	border-top: 1px solid #00BF6F !important;
 }
 	.orderH{
 		padding:0 50px;

@@ -8,6 +8,7 @@ import router from '../router'
 import { Message } from 'element-ui'
 import Auth from '@/util/auth'
 import { stringify } from 'querystring'
+import Cookies from 'js-cookie'
 
 var getTokenLock = false,
   CancelToken = axios.CancelToken,
@@ -62,19 +63,27 @@ function stopRepeatRequest(url, c) {
 // 超时设置
 const service = axios.create({
   // 请求超时时间
-  baseURL: '/ymw',
+  baseURL: '/qr',
   timeout: 500000,
 })
 
 // axios.defaults.headers.post['Content-Type'] = 'application/json';
 // // baseURL
-axios.defaults.baseURL = 'http://192.168.1.128:8080/';
-
+// axios.defaults.baseURL = 'http://192.168.1.128:8080/';
+export const baseUrl = 'http://192.168.1.66:8002'
 // http request 拦截器
 // 每次请求都为http头增加Authorization字段，其内容为token
+var token1 = ''
+var token = Cookies.get('qrToken')
+if(token == undefined){
+	var token1 = ''
+}else{
+	var token1 = token
+}
 service.interceptors.request.use(
   config => {
     config.headers['X-Requested-With'] = 'XMLHttpRequest'
+    // config.headers['token'] = token1
     let cancel
     config.cancelToken = new CancelToken(function executor(c) {
       cancel = c
@@ -90,7 +99,8 @@ service.interceptors.request.use(
     // console.log("in axios")
     checkToken(function() {
       //config.headers.Authorization = `${store.state.user.token}`
-      config.headers.authKey = store.state.auth.token
+      // config.headers.token = store.state.user.token
+      config.headers.token = token1
     })
     //stopRepeatRequest(config.url, cancel)
     return config
@@ -144,4 +154,8 @@ service.interceptors.response.use(
   }
 )
 
-export default service
+export default {
+	service,
+	baseUrl
+
+}
